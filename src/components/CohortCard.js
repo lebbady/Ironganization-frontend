@@ -40,7 +40,7 @@ class CohortCard extends Component {
             )
           })}
         </ul>
-        
+        <a href="/cohorts/create">Add New Cohort</a> 
       </div>
     );
   }

@@ -11,6 +11,7 @@ import AuthProvider from './providers/AuthProvider';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import './stylesheets/style.css';
+import CreateCohort from './pages/CreateCohort';
 
 
 class App extends Component { 
@@ -28,6 +29,7 @@ class App extends Component {
               {/* <AnonRoute path="/signup" component={Signup} /> */}
               <AnonRoute path="/login" component={Login} />
               <PrivateRoute path="/homepage" component={Homepage} />
+              <PrivateRoute path="/cohorts/create" component={CreateCohort} />
               <Route component={NotFound}/>
           </Switch>
         </div>
