@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '../providers/AuthProvider';
+import '../stylesheets/style.css';
+
 class Navbar extends Component {
 
   renderIsLoggedIn = () => {
@@ -13,7 +15,7 @@ class Navbar extends Component {
   renderIsNotLoggedIn = () => {
     return <div>
       <Link to='/login'>Login</Link>
-      <Link to='/signup'>Signup</Link>
+      {/* <Link to='/signup'>Signup</Link> */}
     </div>
   }
 
