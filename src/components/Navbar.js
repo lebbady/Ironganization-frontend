@@ -9,6 +9,8 @@ class Navbar extends Component {
     return <div>
       <p>username: {this.props.user.username}</p>
       <p onClick={this.props.logout}>Logout</p>
+      <p>New Student</p>
+      <p>Cohorts</p>
     </div>
   }
 
