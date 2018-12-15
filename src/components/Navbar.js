@@ -10,14 +10,13 @@ class Navbar extends Component {
       <p>username: {this.props.user.username}</p>
       <p onClick={this.props.logout}>Logout</p>
       <p>New Student</p>
-      <p>Cohorts</p>
+      <Link to="/homepage">Cohorts</Link>
     </div>
   }
 
   renderIsNotLoggedIn = () => {
     return <div>
       <Link to='/login'>Login</Link>
-      {/* <Link to='/signup'>Signup</Link> */}
     </div>
   }
 

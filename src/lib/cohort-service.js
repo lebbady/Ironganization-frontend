@@ -15,6 +15,12 @@ class CohortApi {
     })
   }
 
+  createCohort (cohort) {
+    const { language, category } = cohort;
+    return this.apiInstance.post('/cohorts/create', {language, category})
+      .then(({ data }) => data);
+  }
+
   // createPhone(data) {
   //   this.apiInstance.post('/phones', data)
   // }

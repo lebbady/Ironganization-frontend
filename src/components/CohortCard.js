@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CohortService from '../lib/cohort-service';
+import { Link } from 'react-router-dom';
 
 class CohortCard extends Component {
   state = {
@@ -40,7 +41,7 @@ class CohortCard extends Component {
             )
           })}
         </ul>
-        <a href="/cohorts/create">Add New Cohort</a> 
+        <Link to="/cohorts/create">Add New Cohort</Link> 
       </div>
     );
   }
