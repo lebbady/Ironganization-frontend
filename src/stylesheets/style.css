@@ -1,3 +1,22 @@
+
+
+/*----layout-------*/
+
 .nav-bar {
   background-color: red;
+  position: fixed;
+  width: 100%;
+}
+
+.nav-element {
+  float: right;
+  margin: 0 5% 0 0;
+}
+
+
+/*-----typograhy-------*/
+
+.element-typo {
+  text-decoration: none;
+  color: black;
 }

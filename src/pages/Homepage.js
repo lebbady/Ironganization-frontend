@@ -4,10 +4,6 @@ import { withAuth } from '../providers/AuthProvider';
 
 
 class Homepage extends Component {
-  
-
-  
-
   render() {
     return (
       <div>

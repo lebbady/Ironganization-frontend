@@ -6,17 +6,17 @@ import '../stylesheets/style.css';
 class Navbar extends Component {
 
   renderIsLoggedIn = () => {
-    return <div>
-      <p>username: {this.props.user.username}</p>
-      <p onClick={this.props.logout}>Logout</p>
-      <p>New Student</p>
-      <Link to="/homepage">Cohorts</Link>
+    return <div className="nav-bar">
+      {/* <p className="nav-element">username: {this.props.user.username}</p> */}
+      <p className="nav-element element-typo" onClick={this.props.logout}>Logout</p>
+      <p className="nav-element"><Link className="element-typo" to="/students/create">New Student</Link></p>
+      <p className="nav-element"><Link className="element-typo" to="/homepage">Cohorts</Link></p>
     </div>
   }
 
   renderIsNotLoggedIn = () => {
-    return <div>
-      <Link to='/login'>Login</Link>
+    return <div  className="nav-bar">
+      <p><Link to='/login'>Login</Link></p>
     </div>
   }
 

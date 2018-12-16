@@ -20,9 +20,9 @@ Organizing platform to do the following of the Ironhack students
 
 ## Routes
 - `/` 
-       (if not logged in)
   - LandingPageComponent
-       (if logged in)
+
+- `/homepage`
   - HomePageComponent
   - shows all cohorts
   - button link to create new cohort
@@ -39,7 +39,7 @@ Organizing platform to do the following of the Ironhack students
   - submit cohort button that takes you to the Homepage after submiting
 
 - `/cohorts/:cohort` 
-  - CohortPageComponent
+  - CohortDetailsPageComponent
   - user only
   - shows all the students that belong to that cohort in a card
   - students cards are links that take you to the students profiles

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class CohortApi {
+class StudentApi {
   constructor() {
     this.apiInstance = axios.create({
       baseURL: `${process.env.REACT_APP_API_URL}/api`,
@@ -8,16 +8,9 @@ class CohortApi {
   }
 
 
-  getAllCohorts() {
-    return this.apiInstance.get('/cohorts')
-    .then((response) => {
-      return response.data
-    })
-  }
-
-  createCohort (cohort) {
-    const { language, category } = cohort;
-    return this.apiInstance.post('/cohorts/create', {language, category})
+  createStudent (student) {
+    const { name, surname, pictureUrl, prework: { status, level}, project: { difficulty, quality, deployLink, presentationLink} } = student;
+    return this.apiInstance.post('/students/create', { name, surname, pictureUrl, prework: { status, level}, project: { difficulty, quality, deployLink, presentationLink} })
       .then(({ data }) => data);
   }
 
@@ -43,6 +36,6 @@ class CohortApi {
 
 }
 
-const CohortService = new CohortApi();
+const StudentService = new StudentApi();
 
-export default CohortService;
+export default StudentService;
