@@ -5,7 +5,7 @@ class NewStudent extends Component {
   state = {
     name:"",
     surname:"",
-    pictureUrl:"" ,
+    selectedFile:null ,
     preworkStatus:"",
     preworkLevel:"",
     projectDifficulty:"",
@@ -46,6 +46,17 @@ class NewStudent extends Component {
     this.setState({[name]: value});
   }
 
+  fileSelectedHandler = (event) => {
+    this.setState({
+      selectedFile: event.target.files[0];
+    })
+    console.log(event.target.files[0]);
+  }
+
+  fileUploadHandler = () => {
+
+  }
+
   render() {
     const { name, surname, pictureUrl, preworkStatus, preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink  } = this.state;
     return (
@@ -58,7 +69,8 @@ class NewStudent extends Component {
           <p>Surname</p>
           <input type="text" name="surname" value={surname} onChange={this.handleChange}/>
           <p>Picture Url</p>
-          <input type="text" name="pictureUrl" value={pictureUrl} onChange={this.handleChange}/>
+          <input type="file" onChange={this.fileSelectedHandler}/>
+          <button onClick={this.fileUploadHandler}>Upload Picture</button>
           <p>Prework</p>
           <p>Prework status</p>
           <select id="status" name="preworkStatus" value={preworkStatus} onChange={this.handleChange}>

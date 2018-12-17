@@ -1,4 +1,14 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
+body {
+  margin: 0;
+  padding: 0;
+}
 
 /*----layout-------*/
 
@@ -6,11 +16,16 @@
   background-color: red;
   position: fixed;
   width: 100%;
+  top: 0;
 }
 
 .nav-element {
   float: right;
   margin: 0 5% 0 0;
+}
+
+.main-content {
+  margin-top: 50px;
 }
 
 

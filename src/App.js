@@ -24,16 +24,17 @@ class App extends Component {
           <div>
             <Navbar className="nav-bar" />
           </div>
-          
-          <Switch>
-              <Route exact path="/" component={Home} />
-              <AnonRoute path="/login" component={Login} />
-              <PrivateRoute path="/homepage" component={Homepage} />
-              <PrivateRoute path="/cohorts/create" component={CreateCohort} />
-              <PrivateRoute path="/cohorts/details" component={CohortDetails} />
-              <PrivateRoute path="/students/create" component={NewStudent}/>
-              <Route component={NotFound}/>
-          </Switch>
+          <div className="main-content">
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <AnonRoute path="/login" component={Login} />
+                <PrivateRoute path="/homepage" component={Homepage} />
+                <PrivateRoute path="/cohorts/create" component={CreateCohort} />
+                <PrivateRoute path="/cohorts/details" component={CohortDetails} />
+                <PrivateRoute path="/students/create" component={NewStudent}/>
+                <Route component={NotFound}/>
+            </Switch>
+          </div>
         </div>
       </AuthProvider>
     )
