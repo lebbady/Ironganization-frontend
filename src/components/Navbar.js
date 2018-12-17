@@ -7,16 +7,18 @@ class Navbar extends Component {
 
   renderIsLoggedIn = () => {
     return <div className="nav-bar">
-      {/* <p className="nav-element">username: {this.props.user.username}</p> */}
+      <div className="iron-logo-div"><img className="iron-logo" src="../images/logo.svg" alt="logo ih"/></div>
       <p className="nav-element element-typo" onClick={this.props.logout}>Logout</p>
       <p className="nav-element"><Link className="element-typo" to="/students/create">New Student</Link></p>
-      <p className="nav-element"><Link className="element-typo" to="/homepage">Cohorts</Link></p>
+      <p className="nav-element"><Link className="element-typo" to="/cohorts/create">Add New Cohort</Link></p> 
+      <p className="nav-element"><Link className="element-typo" to="/homepage">Home</Link></p>
     </div>
   }
 
   renderIsNotLoggedIn = () => {
     return <div  className="nav-bar">
-      <p><Link to='/login'>Login</Link></p>
+      <div className="iron-logo-div"><img className="iron-logo" src="../images/logo.svg" alt="logo ih"/></div>
+      <p className="nav-element"><Link className="element-typo" to='/login'>Login</Link></p>
     </div>
   }
 

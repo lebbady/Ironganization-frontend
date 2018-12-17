@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import StudentService from '../lib/student-service';
+import axios from 'axios';
 
 class NewStudent extends Component {
   state = {
@@ -15,14 +16,13 @@ class NewStudent extends Component {
   }
 
   handleFormSubmit = (event) => {
-    const { name, surname, pictureUrl, preworkStatus,preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink  } = this.state;
+    const { name, surname, preworkStatus,preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink  } = this.state;
     event.preventDefault();
-    StudentService.createStudent({ name, surname, pictureUrl, preworkStatus,preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink  })
+    StudentService.createStudent({ name, surname, preworkStatus,preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink  })
       .then(() => {
         this.setState({
           name:"",
           surname:"",
-          pictureUrl:"" ,
           preworkStatus:"",
           preworkLevel:"",
           projectDifficulty:"",
@@ -48,17 +48,16 @@ class NewStudent extends Component {
 
   fileSelectedHandler = (event) => {
     this.setState({
-      selectedFile: event.target.files[0];
+      selectedFile: event.target.files[0]
     })
-    console.log(event.target.files[0]);
   }
 
   fileUploadHandler = () => {
-
+    axios.post();
   }
 
   render() {
-    const { name, surname, pictureUrl, preworkStatus, preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink  } = this.state;
+    const { name, surname, preworkStatus, preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink  } = this.state;
     return (
       <div>
         <h1>Create A New Student</h1>

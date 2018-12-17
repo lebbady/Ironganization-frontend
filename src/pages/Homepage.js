@@ -7,7 +7,9 @@ class Homepage extends Component {
   render() {
     return (
       <div>
-        <h1>Welcome {this.props.user.username}, homeee</h1>
+        <div className="homepage-title">
+          <h1>Cohorts</h1>
+        </div>
         <CohortCard></CohortCard>
       </div>
     )
