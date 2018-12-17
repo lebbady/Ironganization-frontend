@@ -9,8 +9,8 @@ class StudentApi {
 
 
   createStudent (student) {
-    const { name, surname, pictureUrl, prework: { status, level}, project: { difficulty, quality, deployLink, presentationLink} } = student;
-    return this.apiInstance.post('/students/create', { name, surname, pictureUrl, prework: { status, level}, project: { difficulty, quality, deployLink, presentationLink} })
+    const { name, surname, pictureUrl, preworkStatus, preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink  } = student;
+    return this.apiInstance.post('/students/create', { name, surname, pictureUrl, preworkStatus, preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink  })
       .then(({ data }) => data);
   }
 

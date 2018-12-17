@@ -31,7 +31,6 @@ class CreateCohort extends Component {
 
     // const [month, day, year] = data.split('/');
     // const serverDate = `${year}-${month}-${day}`;
-
     const {name, value} = event.target;
     this.setState({[name]: value});
   }
@@ -44,11 +43,15 @@ class CreateCohort extends Component {
         <h1>Create A New Web Cohort</h1>
 
         <form onSubmit={this.handleFormSubmit}>
+          <p>Language</p>
           <select id="language" name="language" value={language} onChange={this.handleChange}>
+            <option value="">- Select an option -</option>
             <option value="English">English</option>
             <option value="Spanish">Spanish</option>
           </select>
+          <p>Category</p>
           <select id="category" name="category" value={category} onChange={this.handleChange}>
+            <option value="">- Select an option -</option>
             <option value="Full-time">Full-time</option>
             <option value="Part-time">Part-time</option>
           </select>
