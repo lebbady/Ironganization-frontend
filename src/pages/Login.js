@@ -28,11 +28,11 @@ class Login extends Component {
     return (
       <div className="login-form">
         <form onSubmit={this.handleFormSubmit}>
-          <p className="login-label">Username</p>
+          <p className="login">Username</p>
           <p><input className="input-login" type="text" name="username" value={username} onChange={this.handleChange}/></p>
-          <p className="login-label">Password</p>
+          <p className="login">Password</p>
           <p><input className="input-login" type="password" name="password" value={password} onChange={this.handleChange} /></p>
-          <p><input className="login-button" type="submit" value="Login" /></p>
+          <p><input className="button" type="submit" value="Login" /></p>
         </form>
       </div>
     )

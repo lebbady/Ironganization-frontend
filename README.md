@@ -38,14 +38,14 @@ Organizing platform to do the following of the Ironhack students
   - shows a form to create the cohort
   - submit cohort button that takes you to the Homepage after submiting
 
-- `/cohorts/:cohort` 
+- `/cohorts/:cohortId` 
   - CohortDetailsPageComponent
   - user only
   - shows all the students that belong to that cohort in a card
   - students cards are links that take you to the students profiles
   - New student button that takes you to the New Student Page
  
-- `/students/:studentid` 
+- `/students/:studentId` 
   - StudentProfileComponent 
   - user only
   - shows all the information regarding the student selected

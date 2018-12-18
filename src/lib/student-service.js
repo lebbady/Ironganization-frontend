@@ -28,26 +28,19 @@ class StudentApi {
     })
   }
 
+  getStudentById (studentId) {
+    return this.apiInstance.get(`/students/${studentId}`)
+    .then((response) => {
+      return response.data
+    })
+  }
 
-  // createPhone(data) {
-  //   this.apiInstance.post('/phones', data)
-  // }
-
-  // updatePhone(id, data) {
-  //   return this.apiInstance.put(`/phones/${id}`, data)
-  //   .then((response) =>{
-  //     return response.data
-  //   })
-  // }
-
-  // deletePhone(id, data) {
-  //   return this.apiInstance.delete(`/phones/${id}`, data)
-  //   .then((response) =>{
-  //     return response.data
-  //   })
-  // }
-
-
+  deleteStudent (studentId) {
+    return this.apiInstance.delete(`/students/${studentId}`)
+    .then((response) => {
+      return response.data
+    })
+  }
 }
 
 const StudentService = new StudentApi();

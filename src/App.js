@@ -13,6 +13,7 @@ import './stylesheets/style.css';
 import CreateCohort from './pages/CreateCohort';
 import CohortDetails from './pages/CohortDetails';
 import NewStudent from './pages/NewStudent';
+import StudentDetails from './pages/StudentDetails';
 
 
 class App extends Component {
@@ -32,6 +33,7 @@ class App extends Component {
                 <PrivateRoute path="/cohorts/create" component={CreateCohort} />
                 <PrivateRoute path="/cohorts/:cohortId" component={CohortDetails} />
                 <PrivateRoute path="/students/create" component={NewStudent}/>
+                <PrivateRoute path="/students/:studentId" component={StudentDetails}/>
                 <Route component={NotFound}/>
             </Switch>
           </div>

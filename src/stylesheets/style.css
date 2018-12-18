@@ -13,29 +13,26 @@ body {
   color:#2d354c;
 }
 
+button {
+  color: black;
+}
+
 /*----layout-------*/
 
 .nav-bar {
   background-color: #2d354c;
   position: fixed;
   width: 100%;
-  height: 10%;
+  height: 65px;
   top: 0;
-}
-
-.nav-element {
-  float: right;
-  margin: 1.8% 5% 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
 }
 
 .main-content {
   margin-top: 10vh;
-}
-
-.iron-logo-div {
-  float: left;
-  margin:1.1% 1% 2% 2%;
-  
 }
 
 .iron-logo {
@@ -71,7 +68,36 @@ ul {
   padding-top: 7%;
 }
 
-.input-login {
+.input {
+  border: 2px solid #2d354c;
+  width: 20%;
+  height: 30px;
+  border-radius: 5px;
+  background-color: rgb(245, 241, 241);
+  padding: 0 1%;
+}
+
+.landing-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-page-image {
+  width: 30%;
+}
+
+.details {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.create-student-profile {
+  text-align: center;
+}
+
+.select {
   border: 2px solid #2d354c;
   width: 20%;
   height: 30px;
@@ -111,7 +137,7 @@ li {
 
 /*----button----*/
 
-.login-button {
+.button {
   border: 1px solid #00b4fe;
   background-color: #00b4fe;
   width: 15%;
@@ -120,4 +146,8 @@ li {
   height: 50px;
   margin-top: 30px;
   font-size: 150%;
+}
+
+.button-wide {
+  width: 30%;
 }

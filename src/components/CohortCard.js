@@ -35,15 +35,13 @@ class CohortCard extends Component {
                 <li>
                   <div  className="cohort-card-up">
                     <p>{cohort.speciality} {cohort.name}</p>
-                    <p>{cohort.category}</p>
-                    <p>Language: {cohort.language}</p>
+                    <p>{cohort.category} ({cohort.language})</p>
                   </div>
                   <div  className="cohort-card-down">
-                    <p>Date: from {cohort.startingDate} to {cohort.endingDate}</p>
+                    <p>From {cohort.startingDate} to {cohort.endingDate}</p>
                   </div>
                 </li>
-              </Link>
-                
+              </Link>   
             )
           })}
         </ul>

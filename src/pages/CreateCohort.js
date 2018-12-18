@@ -14,23 +14,19 @@ class CreateCohort extends Component {
     console.log(language, category, startingDate, endingDate);
     event.preventDefault();
     CohortService.createCohort({language, category, startingDate, endingDate})
-      .then(() => {
-        this.setState({
-          language:"",
-          category:"",
-          startingDate:"" ,
-          endingDate:""
+    .then(() => {
+      this.setState({
+        language:"",
+        category:"",
+        startingDate:"" ,
+        endingDate:""
 
       })
-      .catch( error => console.log(error) ); 
     })
+    .catch( error => console.log(error) ); 
   }
 
-  handleChange = (event) => {  
-    // const data = new FormData(event.target);
-
-    // const [month, day, year] = data.split('/');
-    // const serverDate = `${year}-${month}-${day}`;
+  handleChange = (event) => {
     const {name, value} = event.target;
     this.setState({[name]: value});
   }
@@ -39,27 +35,27 @@ class CreateCohort extends Component {
   render() {
     const {language, category, startingDate, endingDate } = this.state;
     return (
-      <div>
+      <div className="details">
         <h1>Create A New Web Cohort</h1>
 
         <form onSubmit={this.handleFormSubmit}>
           <p>Language</p>
-          <select id="language" name="language" value={language} onChange={this.handleChange}>
+          <select className="select" id="language" name="language" value={language} onChange={this.handleChange}>
             <option value="">- Select an option -</option>
             <option value="English">English</option>
             <option value="Spanish">Spanish</option>
           </select>
           <p>Category</p>
-          <select id="category" name="category" value={category} onChange={this.handleChange}>
+          <select className="select" id="category" name="category" value={category} onChange={this.handleChange}>
             <option value="">- Select an option -</option>
             <option value="Full-time">Full-time</option>
             <option value="Part-time">Part-time</option>
           </select>
           <p>Starting date</p>
-          <input type="date" value={startingDate} onChange={this.handleChange}/>
+          <input className="input" type="text" name="startingDate" value={startingDate} onChange={this.handleChange}/>
           <p>Ending date</p>
-          <input type="date" value={endingDate} onChange={this.handleChange}/>
-          <input type="submit" value="Create New Cohort" />
+          <input className="input" type="text" name="endingDate" value={endingDate} onChange={this.handleChange}/>
+          <p><input className="button button-wide" type="submit" value="Create New Cohort" /></p>
         </form>
       </div>
     );
