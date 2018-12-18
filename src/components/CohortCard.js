@@ -11,7 +11,6 @@ class CohortCard extends Component {
   componentDidMount() {
     CohortService.getAllCohorts()
     .then((cohorts) => {
-      console.log('cohorts', cohorts)
       this.setState({
         cohorts
       })
@@ -32,8 +31,8 @@ class CohortCard extends Component {
         <ul>
           {cohorts.map((cohort) => {
             return (
-              <Link className="cohort-card-link" to={`/cohorts/${cohort._id}`}>
-                <li key={cohort._id}>
+              <Link key={cohort._id} className="cohort-card-link" to={`/cohorts/${cohort._id}`}>
+                <li>
                   <div  className="cohort-card-up">
                     <p>{cohort.speciality} {cohort.name}</p>
                     <p>{cohort.category}</p>

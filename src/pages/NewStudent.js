@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import StudentService from '../lib/student-service';
-import axios from 'axios';
 
 class NewStudent extends Component {
   state = {
@@ -32,18 +31,17 @@ class NewStudent extends Component {
           projectDeployLink:"",
           projectPresentationLink:"",
           cohortId: null
-
+        })
       })
-      .catch( error => console.log(error) ); 
-    })
+      .catch( error => console.log(error) );
   }
+
 
   handleChange = (event) => {  
     // const data = new FormData(event.target);
 
     // const [month, day, year] = data.split('/');
     // const serverDate = `${year}-${month}-${day}`;
-    console.log(event.target);
 
     const {name, value} = event.target;
     this.setState({[name]: value});
@@ -52,7 +50,6 @@ class NewStudent extends Component {
   componentDidMount() {
     StudentService.getAllCohorts()
     .then((cohorts) => {
-      console.log('cohorts', cohorts)
       this.setState({
         cohorts
       })
@@ -67,7 +64,6 @@ class NewStudent extends Component {
 
   render() {
     const { name, surname, preworkStatus, preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink, cohorts, cohortId  } = this.state;
-    console.log(cohorts);
     return (
       <div>
         <h1>Create A New Student</h1>
@@ -117,7 +113,6 @@ class NewStudent extends Component {
               return <option key={cohort._id} value={cohort._id}>{cohort.name}{cohort.speciality}{cohort.language}</option>
             })}
           </select>
-          
           <input type="submit" value="Create New Student" />
         </form>
       </div>

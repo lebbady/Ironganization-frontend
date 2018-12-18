@@ -9,13 +9,20 @@ class StudentApi {
 
 
   createStudent (student) {
-    const { name, surname, pictureUrl, preworkStatus, preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink  } = student;
-    return this.apiInstance.post('/students/create', { name, surname, pictureUrl, preworkStatus, preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink  })
+    const { name, surname, pictureUrl, preworkStatus, preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink, cohortId  } = student;
+    return this.apiInstance.post('/students/create', { name, surname, pictureUrl, preworkStatus, preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink, cohortId  })
       .then(({ data }) => data);
   }
 
   getAllCohorts() {
     return this.apiInstance.get('/students/create')
+    .then((response) => {
+      return response.data
+    })
+  }
+
+  getStudents(cohortId) {
+    return this.apiInstance.get(`/cohorts/${cohortId}`)
     .then((response) => {
       return response.data
     })
