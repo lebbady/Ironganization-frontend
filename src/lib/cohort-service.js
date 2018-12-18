@@ -21,6 +21,13 @@ class CohortApi {
       .then(({ data }) => data);
   }
 
+  getCohortById (cohortId) {
+    return this.apiInstance.get(`/cohorts/${cohortId}`)
+    .then((response) => {
+      return response.data
+    })
+  }
+
 
   // createPhone(data) {
   //   this.apiInstance.post('/phones', data)

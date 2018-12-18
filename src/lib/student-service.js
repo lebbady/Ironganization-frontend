@@ -14,6 +14,13 @@ class StudentApi {
       .then(({ data }) => data);
   }
 
+  getAllCohorts() {
+    return this.apiInstance.get('/students/create')
+    .then((response) => {
+      return response.data
+    })
+  }
+
 
   // createPhone(data) {
   //   this.apiInstance.post('/phones', data)

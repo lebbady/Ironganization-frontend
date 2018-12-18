@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CohortService from '../lib/cohort-service';
+import { Link } from 'react-router-dom';
 
 class CohortCard extends Component {
   state = {
@@ -30,8 +31,8 @@ class CohortCard extends Component {
       <div>
         <ul>
           {cohorts.map((cohort) => {
-            console.log(cohort._id)
             return (
+              <Link className="cohort-card-link" to={`/cohorts/${cohort._id}`}>
                 <li key={cohort._id}>
                   <div  className="cohort-card-up">
                     <p>{cohort.speciality} {cohort.name}</p>
@@ -42,6 +43,8 @@ class CohortCard extends Component {
                     <p>Date: from {cohort.startingDate} to {cohort.endingDate}</p>
                   </div>
                 </li>
+              </Link>
+                
             )
           })}
         </ul>

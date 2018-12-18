@@ -12,13 +12,15 @@ class NewStudent extends Component {
     projectDifficulty:"",
     projectQuality:"",
     projectDeployLink:"",
-    projectPresentationLink:""
+    projectPresentationLink:"",
+    cohortId: null,
+    cohorts: []
   }
 
   handleFormSubmit = (event) => {
-    const { name, surname, preworkStatus,preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink  } = this.state;
+    const { name, surname, preworkStatus,preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink, cohortId  } = this.state;
     event.preventDefault();
-    StudentService.createStudent({ name, surname, preworkStatus,preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink  })
+    StudentService.createStudent({ name, surname, preworkStatus,preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink, cohortId  })
       .then(() => {
         this.setState({
           name:"",
@@ -28,7 +30,8 @@ class NewStudent extends Component {
           projectDifficulty:"",
           projectQuality:"",
           projectDeployLink:"",
-          projectPresentationLink:""
+          projectPresentationLink:"",
+          cohortId: null
 
       })
       .catch( error => console.log(error) ); 
@@ -46,18 +49,25 @@ class NewStudent extends Component {
     this.setState({[name]: value});
   }
 
-  fileSelectedHandler = (event) => {
-    this.setState({
-      selectedFile: event.target.files[0]
+  componentDidMount() {
+    StudentService.getAllCohorts()
+    .then((cohorts) => {
+      console.log('cohorts', cohorts)
+      this.setState({
+        cohorts
+      })
+      
+    })
+    .catch((error) => {
+      this.setState({
+        error,
+      })
     })
   }
 
-  fileUploadHandler = () => {
-    axios.post();
-  }
-
   render() {
-    const { name, surname, preworkStatus, preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink  } = this.state;
+    const { name, surname, preworkStatus, preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink, cohorts, cohortId  } = this.state;
+    console.log(cohorts);
     return (
       <div>
         <h1>Create A New Student</h1>
@@ -67,9 +77,6 @@ class NewStudent extends Component {
           <input type="text" name="name" value={name} onChange={this.handleChange} />
           <p>Surname</p>
           <input type="text" name="surname" value={surname} onChange={this.handleChange}/>
-          <p>Picture Url</p>
-          <input type="file" onChange={this.fileSelectedHandler}/>
-          <button onClick={this.fileUploadHandler}>Upload Picture</button>
           <p>Prework</p>
           <p>Prework status</p>
           <select id="status" name="preworkStatus" value={preworkStatus} onChange={this.handleChange}>
@@ -103,6 +110,14 @@ class NewStudent extends Component {
           <input type="text" value={projectPresentationLink} onChange={this.handleChange}/>
           <p>Project deploy link</p>
           <input type="text" value={projectDeployLink} onChange={this.handleChange}/>
+          <p>Cohort</p>
+          <select name="cohortId" id="cohortId" onChange={this.handleChange}>
+            <option value="">- Select one option -</option> 
+            {cohorts.map((cohort) => {
+              return <option key={cohort._id} value={cohort._id}>{cohort.name}{cohort.speciality}{cohort.language}</option>
+            })}
+          </select>
+          
           <input type="submit" value="Create New Student" />
         </form>
       </div>

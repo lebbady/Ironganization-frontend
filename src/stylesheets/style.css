@@ -104,6 +104,11 @@ li {
   font-size: 150%;
 } 
 
+.cohort-card-link {
+  text-decoration: none;
+  color: #2d354c;
+}
+
 /*----button----*/
 
 .login-button {
