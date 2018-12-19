@@ -14,6 +14,7 @@ import CreateCohort from './pages/CreateCohort';
 import CohortDetails from './pages/CohortDetails';
 import NewStudent from './pages/NewStudent';
 import StudentDetails from './pages/StudentDetails';
+import EditCohort from './pages/EditCohort';
 
 
 class App extends Component {
@@ -31,7 +32,8 @@ class App extends Component {
                 <AnonRoute path="/login" component={Login} />
                 <PrivateRoute path="/homepage" component={Homepage} />
                 <PrivateRoute path="/cohorts/create" component={CreateCohort} />
-                <PrivateRoute path="/cohorts/:cohortId" component={CohortDetails} />
+                <PrivateRoute exact path="/cohorts/:cohortId" component={CohortDetails} />
+                <PrivateRoute path="/cohorts/:cohortId/edit" component={EditCohort} />
                 <PrivateRoute path="/students/create" component={NewStudent}/>
                 <PrivateRoute path="/students/:studentId" component={StudentDetails}/>
                 <Route component={NotFound}/>

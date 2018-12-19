@@ -68,6 +68,7 @@ class CohortDetails extends Component {
             return <Link  key={student._id} to={`/students/${student._id}`}><li>{student.name}</li></Link>
           })}
         </ul>
+        <Link to={`/cohorts/${this.props.match.params.cohortId}/edit`}>Edit Cohort</Link>
         <button className="button" onClick={this.deleteCohort}>Delete Cohort</button>
       </div>
     );

@@ -11,8 +11,9 @@ class CreateCohort extends Component {
 
   handleFormSubmit = (event) => {
     const {language, category, startingDate, endingDate} = this.state;
+    console.log(language, category, startingDate, endingDate);
     event.preventDefault();
-    CohortService.createCohort({language, category, startingDate, endingDate})
+    CohortService.editCohort({language, category, startingDate, endingDate}, this.props.match.params.cohortId)
     .then(() => {
       this.setState({
         language:"",
@@ -35,7 +36,7 @@ class CreateCohort extends Component {
     const {language, category, startingDate, endingDate } = this.state;
     return (
       <div className="details">
-        <h1>Create A New Web Cohort</h1>
+        <h1>Edit this Cohort</h1>
 
         <form onSubmit={this.handleFormSubmit}>
           <p>Language</p>
@@ -54,7 +55,7 @@ class CreateCohort extends Component {
           <input className="input" type="text" name="startingDate" value={startingDate} onChange={this.handleChange}/>
           <p>Ending date</p>
           <input className="input" type="text" name="endingDate" value={endingDate} onChange={this.handleChange}/>
-          <p><input className="button button-wide" type="submit" value="Create New Cohort" /></p>
+          <p><input className="button button-wide" type="submit" value="Edit Cohort" /></p>
         </form>
       </div>
     );

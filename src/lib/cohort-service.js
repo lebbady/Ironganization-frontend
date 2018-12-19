@@ -16,8 +16,7 @@ class CohortApi {
   }
 
   createCohort (cohort) {
-    const { language, category, startingDate, endingDate } = cohort;
-    return this.apiInstance.post('/cohorts/create', {language, category, startingDate, endingDate})
+    return this.apiInstance.post('/cohorts/create', cohort)
       .then(({ data }) => data);
   }
 
@@ -30,6 +29,13 @@ class CohortApi {
 
   deleteCohort (cohortId) {
     return this.apiInstance.delete(`/cohorts/${cohortId}`)
+    .then((response) => {
+      return response.data
+    })
+  }
+
+  editCohort (cohort, cohortId) {
+    return this.apiInstance.put (`/cohorts/edit/${cohortId}`, cohort)
     .then((response) => {
       return response.data
     })

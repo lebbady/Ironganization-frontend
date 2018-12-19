@@ -17,7 +17,7 @@ class Navbar extends Component {
 
   renderIsNotLoggedIn = () => {
     return <div  className="nav-bar">
-      <div className="iron-logo-div"><img className="iron-logo" src="../images/logo.svg" alt="logo ih"/></div>
+      <div className="iron-logo-div"><img className="iron-logo" src="./images/logo.svg" alt="logo ih"/></div>
       <p className="nav-element"><Link className="element-typo" to='/login'>Login</Link></p>
     </div>
   }

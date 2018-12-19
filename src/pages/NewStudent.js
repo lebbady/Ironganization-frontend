@@ -58,7 +58,7 @@ class NewStudent extends Component {
   }
 
   render() {
-    const { name, surname, preworkStatus, preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink, cohorts, cohortId  } = this.state;
+    const { name, surname, preworkStatus, preworkLevel, projectDifficulty, projectQuality, projectDeployLink, projectPresentationLink, cohorts  } = this.state;
     return (
       <div className="create-student-profile">
         <h1>Create A New Student</h1>
