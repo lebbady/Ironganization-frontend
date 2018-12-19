@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import StudentService from '../lib/student-service';
-import {Redirect} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
 
 class StudentDetails extends Component {
   state = {
@@ -47,6 +47,7 @@ class StudentDetails extends Component {
         <h2>Student Details</h2>
         <p>{student.name}</p>
         <p>{student.surname}</p>
+        <Link to={`/students/${this.props.match.params.studentId}/edit`}>Edit Student</Link>
         <button className="button-wide button" onClick={this.deleteStudent}>Delete Student</button>
       </div>
     );

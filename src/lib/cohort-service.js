@@ -35,7 +35,7 @@ class CohortApi {
   }
 
   editCohort (cohort, cohortId) {
-    return this.apiInstance.put (`/cohorts/edit/${cohortId}`, cohort)
+    return this.apiInstance.put (`/cohorts/${cohortId}/edit`, cohort)
     .then((response) => {
       return response.data
     })

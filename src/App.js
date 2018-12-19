@@ -15,6 +15,9 @@ import CohortDetails from './pages/CohortDetails';
 import NewStudent from './pages/NewStudent';
 import StudentDetails from './pages/StudentDetails';
 import EditCohort from './pages/EditCohort';
+import EditStudent from './pages/EditStudent';
+import './images/logo.svg';
+
 
 
 class App extends Component {
@@ -35,7 +38,8 @@ class App extends Component {
                 <PrivateRoute exact path="/cohorts/:cohortId" component={CohortDetails} />
                 <PrivateRoute path="/cohorts/:cohortId/edit" component={EditCohort} />
                 <PrivateRoute path="/students/create" component={NewStudent}/>
-                <PrivateRoute path="/students/:studentId" component={StudentDetails}/>
+                <PrivateRoute exact path="/students/:studentId" component={StudentDetails}/>
+                <PrivateRoute path="/students/:studentId/edit" component={EditStudent} />
                 <Route component={NotFound}/>
             </Switch>
           </div>

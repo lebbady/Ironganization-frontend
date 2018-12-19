@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CohortService from '../lib/cohort-service';
 
-class CreateCohort extends Component {
+class EditCohort extends Component {
   state = {
     language:"",
     category:"",
@@ -11,7 +11,6 @@ class CreateCohort extends Component {
 
   handleFormSubmit = (event) => {
     const {language, category, startingDate, endingDate} = this.state;
-    console.log(language, category, startingDate, endingDate);
     event.preventDefault();
     CohortService.editCohort({language, category, startingDate, endingDate}, this.props.match.params.cohortId)
     .then(() => {
@@ -62,4 +61,4 @@ class CreateCohort extends Component {
   }
 }
 
-export default CreateCohort;
+export default EditCohort;

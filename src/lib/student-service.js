@@ -41,6 +41,13 @@ class StudentApi {
       return response.data
     })
   }
+
+  editStudent (student ,studentId) {
+    return this.apiInstance.put(`/students/${studentId}/edit`, student)
+    .then((response) => {
+      return response.data
+    })
+  }
 }
 
 const StudentService = new StudentApi();
