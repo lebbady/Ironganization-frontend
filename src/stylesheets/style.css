@@ -106,6 +106,25 @@ ul {
   padding: 0 1%;
 }
 
+p {
+  text-align: center;
+}
+
+.block {
+  display: block;
+}
+
+span {
+  display: flex;
+  
+}
+
+.student-info {
+margin: 5px 5px;
+
+}
+
+
 /*-----typograhy-------*/
 
 .element-typo {
@@ -128,11 +147,24 @@ li {
 
 .login-label {
   font-size: 150%;
-} 
+}
+
+.text-deco {
+  text-decoration: none;
+}
 
 .cohort-card-link {
   text-decoration: none;
   color: #2d354c;
+}
+
+.student-info {
+  color: #2d354c;
+
+}
+
+.link-deco {
+  text-decoration: none;
 }
 
 /*----button----*/
@@ -140,14 +172,32 @@ li {
 .button {
   border: 1px solid #00b4fe;
   background-color: #00b4fe;
-  width: 15%;
+  width: 150px;
   border-radius: 5px;
   color: rgb(245, 241, 241);
   height: 50px;
   margin-top: 30px;
-  font-size: 150%;
+  display: inherit;
+  font-size: 25px;
+  margin: 10px auto;
+  line-height: 48px;
 }
 
 .button-wide {
-  width: 30%;
+  width: 300px;
+}
+
+.delete {
+  background-color: rgb(233, 109, 7);
+  border-color:  rgb(233, 109, 7);
+}
+
+/*-----cards-----*/
+
+.student-card {
+  border: 2px solid #2d354c;
+  width: 200px;
+  margin: 15px auto;
+  border-radius: 5px;
+  display: flex;
 }

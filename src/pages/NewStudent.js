@@ -5,7 +5,6 @@ class NewStudent extends Component {
   state = {
     name:"",
     surname:"",
-    selectedFile:null ,
     preworkStatus:"",
     preworkLevel:"",
     projectDifficulty:"",

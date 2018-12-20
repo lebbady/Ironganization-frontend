@@ -25,7 +25,7 @@ class StudentDetails extends Component {
   deleteStudent = (event) => {
     event.preventDefault();
     StudentService.deleteStudent(this.props.match.params.studentId)
-    .then((result) => {
+    .then(() => {
       this.setState({
         redirect: true
       })  
@@ -45,13 +45,20 @@ class StudentDetails extends Component {
     return (
       <div className="details">
         <h2>Student Details</h2>
-        <p>{student.name}</p>
-        <p>{student.surname}</p>
-        <Link to={`/students/${this.props.match.params.studentId}/edit`}>Edit Student</Link>
-        <button className="button-wide button" onClick={this.deleteStudent}>Delete Student</button>
+        <div className="student-details">
+          <p>{student.name}</p>
+          <p>{student.surname}</p>
+          <p><b>Prework Status:</b>{student.preworkStatus}</p>
+          <p><b>Prework Level:</b>{student.preworkLevel}</p>
+          <p><b>Project Difficulty:</b>{student.projectDifficulty}</p>
+          <p><b>Project Difficulty:</b>{student.projectLevel}</p>
+          <p><b>Project Deploy Link:</b>{student.projectDeployLink}</p>
+          <p><b>Project Presentation Link:</b>{student.projectPresentationLink}</p>
+        </div>
+        <Link className="button text-deco block" to={`/students/${this.props.match.params.studentId}/edit`}>Edit</Link>
+        <button className="button delete" onClick={this.deleteStudent}>Delete</button>
       </div>
     );
   }
 }
-
 export default StudentDetails;

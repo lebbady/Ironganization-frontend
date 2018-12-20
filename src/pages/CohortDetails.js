@@ -52,7 +52,6 @@ class CohortDetails extends Component {
   }
 
   render() {
-    const cohort = this.state.cohort;
     const students =this.state.students;
     if(this.state.redirect){
       return <Redirect push to={`/homepage`}/>
@@ -60,16 +59,21 @@ class CohortDetails extends Component {
     return (
       <div className="details">
         <h2>Cohort details</h2>
-        <p>{cohort.name}</p>
-        <p>{cohort.language}</p>
-        <p>{cohort.speciality}</p>
         <ul>
           {students.map((student) => {
-            return <Link  key={student._id} to={`/students/${student._id}`}><li>{student.name}</li></Link>
+            return  ( 
+                  <p className="student-card">
+                    <Link className="link-deco" key={student._id} to={`/students/${student._id}`}>
+                      <span className="student-info">{student.name} {student.surname}</span>
+                      <span className="student-info"><b>Prework Status:</b> {student.preworkStatus}</span>
+                      <span className="student-info"><b>Prework Level:</b> {student.preworkLevel}</span>
+                    </Link>
+                  </p>
+            )
           })}
         </ul>
-        <Link to={`/cohorts/${this.props.match.params.cohortId}/edit`}>Edit Cohort</Link>
-        <button className="button" onClick={this.deleteCohort}>Delete Cohort</button>
+        <Link className="button text-deco block" to={`/cohorts/${this.props.match.params.cohortId}/edit`}>Edit</Link>
+        <button className="button delete" onClick={this.deleteCohort}>Delete</button>
       </div>
     );
   }
