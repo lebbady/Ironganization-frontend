@@ -44,6 +44,7 @@ class NewStudent extends Component {
   componentDidMount() {
     StudentService.getAllCohorts()
     .then((cohorts) => {
+      console.log(cohorts);
       this.setState({
         cohorts
       })
@@ -104,7 +105,7 @@ class NewStudent extends Component {
           <select className="select" name="cohortId" id="cohortId" onChange={this.handleChange}>
             <option value="">- Select one option -</option> 
             {cohorts.map((cohort) => {
-              return <option key={cohort._id} value={cohort._id}>{cohort.name}{cohort.speciality}{cohort.language}</option>
+              return <option key={cohort._id} value={cohort._id}>{cohort.name} - {cohort.speciality}({cohort.language}) - [{cohort.startingDate}]</option>
             })}
           </select>
           <p><input className="button-wide button" type="submit" value="Create New Student" /></p>
